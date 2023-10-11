@@ -9,7 +9,7 @@ from django.utils import timezone
 class Post (models.Model): #class é a palavra que mostra que estamos definindo um objeto/ post é o nome do nosso modelo
     # / models.Model significa que o Post é um modelo de Django, então o Django sabe que ele deve ser salvo no banco de dados.
 
-    #definindo nossas propriedades e o tipo de cada uma
+    """definindo nossas propriedades e o tipo de cada uma"""
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) # este é um link para outro modelo.
     title = models.CharField(max_length=200) #CharField texto com número limitado de caracteres. no nosso, o maximo é 200 para nome de titulo
     text = models.TextField() #texto sem limite fixo, ideal para conteúdo do blog

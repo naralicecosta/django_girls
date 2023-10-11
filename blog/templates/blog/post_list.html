@@ -1,16 +1,18 @@
 <html>
+    <head>
+        <title>Blog Django Girls</title>
+    </head>
     <body>
-        <h1>Blog Django Girl</h1>
-        <h2>blog de postagens</h2>
-        <p>Lorem Ipsum is simply dummy <strong>text</strong>text of the printing and<br> typesetting industry. Lorem Ips</p>
-        <a href="https://djangogirls.org">link</a>
-
-        <ul>
-            <li>primeiro item</li>
-            <li>segundo item</li>
-        </ul>
-        <p>Hi there</p>
-        <p>It works</p>
+        <div>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
-
 </html>
