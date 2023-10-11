@@ -14,11 +14,11 @@ class Post (models.Model): #class é a palavra que mostra que estamos definindo 
     title = models.CharField(max_length=200) #CharField texto com número limitado de caracteres. no nosso, o maximo é 200 para nome de titulo
     text = models.TextField() #texto sem limite fixo, ideal para conteúdo do blog
     created_date = models.DateTimeField(default=timezone.now) # este é uma data e hora.
-    published_Date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(blank=True, null=True)
 
 
     def publish(self): #metodo publish/ def declara uma função e publish seu nome
-        self.published_Date = timezone.now()
+        self.published_date = timezone.now()
         self.save()
 
         def __str__(self):
